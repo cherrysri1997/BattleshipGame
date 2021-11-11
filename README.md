@@ -28,9 +28,18 @@
     3.  [0-1]  ->  If the player wants to place a ship horizontally (i.e., along a row), then he/she is supposed to choose 0, else if the player wants to place a ship vertically (i.e., along a column) then he/she is aupposed to choose 1
   * In the above step, if a player wants to align a ship along a row then he/she has to enter the cell address of the left-most cell (suppose a player wants to place a CARRIER (size - 5) on board as follows: J5, J6, J7, J8, J9, then the input to be given for such arrangement is J50, here J represents the row, 5 represents the column and 0 represents that the J5 is the left-most cell to begin the horizontal alignment with)
   * In the above step, if a player wants to align a ship along a column then he/she has to enter the cell address of the top-most cell (suppose a player wants to place a CARRIER (size - 5) on board as follows: F10, G10, H10, I10, J10, then the input to be given for such arrangement is F101, here F represents the row, 10 represents the column and 1 represents that the F10 is the top-most cell to begin the vertical alignment with)
-  * Players will be prompted in case of a wrong input, at all stages of the game play.
-  * Until all the 5 ships of atleast 1 player are destroyed, the game loop continues.
+  * Players will be prompted in case of a wrong input, at all stages of the gameplay.
+  * Until all the 5 ships of at least 1 player are destroyed, the game loop continues.
   * The game loop breaks as soon as a player loses all of his/her 5 ships.
+  * The console output is printed into a PDF and uploaded with the name [output_console.pdf](https://github.com/cherrysri1997/BattleshipGame/blob/master/output_console.pdf). Please refer it for the output of whole gameplay.
+  * At the end of the game WINNER will be announced and all the moves made by both the players will be displayed in order.
 
-### At the end of the game WINNER will be announced and all the moves made by both the players will be displayed in order.
+### Additional Requirements:
+Further, to answer the question: **Explain how will you extend your design to
+allow people to play over the network (p2p without having a central server).**
+
+Since we don't want to have a central server, then the idea would be is to make one of the player's device, a server and the other one, a client.
+And then create a link for a game share it to the opponent and challenge.
+
+Another idea is to enable the hotspot/bluetooth on one device and getting opponent's device connected to it, so that they are in the same network. Then connection provider is considered a server and connection seeking device as a client.
 
