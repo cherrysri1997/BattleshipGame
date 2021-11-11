@@ -1,4 +1,3 @@
-from entities.Board import Board
 from typing import List
 from utilities.data_util import ROW_SIZE, COL_SIZE
 
@@ -17,7 +16,7 @@ def print_board(matrix_board):
 
 
 def print_both_boards(board: List[List[str]], abstract_board_of_opponent: List[List[str]]):
-    print("On the left is the current state of your board and"
+    print("On the left is the current state of your board and "
           "on the other side is the current state of your opponent's board.\n"
           "'_' indicates this place hasn't be fired yet,\n"
           "'!' indicates that it is a miss-fire\n"

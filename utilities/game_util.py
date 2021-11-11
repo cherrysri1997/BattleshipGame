@@ -10,11 +10,13 @@ from utilities.coordinate_util import get_coordinate_for_firing
 from typing import Dict
 
 
-def print_notes(notes_repo: List[str]):
+def print_notes(notes_repo: List[str], player_A_matrix: List[List[str]], player_B_matrix: List[List[str]]):
     print("\n\nHere is the gameplay:")
     print("---------------------------------\n\n")
-    for notes in notes_repo:
-        print(notes)
+    for index, notes in enumerate(notes_repo):
+        print(index + 1, ")", notes)
+
+    print_both_boards(player_A_matrix, player_B_matrix)
 
 
 def note_game_play(notes_repo: List, statement):
@@ -22,11 +24,9 @@ def note_game_play(notes_repo: List, statement):
 
 
 def note_move(notes_repo: List, player_name: str, move: str, is_hit: bool):
-    hit_or_miss = "an INVALID COORDINATE"
+    hit_or_miss = "a MISS"
     if is_hit is True:
         hit_or_miss = "a HIT"
-    elif is_hit is None:
-        hit_or_miss = "a MISS"
     note_game_play(notes_repo, f"{player_name} fired at {move} on the opponent's board and its {hit_or_miss}.")
 
 
@@ -60,7 +60,7 @@ def set_move_on_board(move: Coordinate, player: Player, opponent: Player):
 
 
 def announce_winner_and_loser(winner_name: str, loser_name: str, notes_repo: List[str]):
-    statement = f"{winner_name} has won the game and destroyed the Ship Base of {loser_name}"
+    statement = f"\n\n{winner_name} has won the game and destroyed the Fleet of {loser_name}!!!\n\n"
     note_game_play(notes_repo, statement)
     print(statement)
 
@@ -89,7 +89,7 @@ def get_move(player: Player, opponent: Player):
     def provide_options() -> str:
         print(f"{player.name}, its your turn to chose an option.\n"
               f"Enter 1 to visualize current state of your board and opponent board as well\n"
-              f"Enter 2 to Fire on opponent's Ship Base\n")
+              f"Enter 2 to Fire on {opponent.name}'s Fleet\n")
 
         while True:
             option = input("Your option? (1/2): ").strip()
@@ -105,7 +105,7 @@ def get_move(player: Player, opponent: Player):
         print_both_boards(player.board.matrix, opponent.board.abstract_board)
     else:
         while True:
-            cell_address = input(f"Enter a cell address in the format of [A-J][1-10] to fire at {opponent.name}'s Ship Base: ")
+            cell_address = input(f"Enter a cell address in the format of [A-J][1-10] to fire at {opponent.name}'s Fleet: ")
             coordinate = get_coordinate_for_firing(cell_address, opponent.board.matrix)
 
             if coordinate is not None:
@@ -133,27 +133,3 @@ def begin_game(game: Game) -> tuple[Player, Player]:
             turn = not turn
 
     return game.winner, game.loser
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

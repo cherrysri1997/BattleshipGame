@@ -6,7 +6,6 @@ from utilities.game_util import begin_game, announce_winner_and_loser, print_not
 
 if __name__ == '__main__':
     player_A_name, player_B_name = get_player_names()
-    # player_A_name, player_B_name = "Tony", "Peter"
 
     empty_board = get_base_matrix()
 
@@ -22,18 +21,4 @@ if __name__ == '__main__':
 
     announce_winner_and_loser(winner.name, loser.name, game.game_play)
 
-    print_notes(game.game_play)
-
-    """
-        Yet to develop:
-        ----------------
-        * After creating a game, start the game play and keep noting the moves
-        * The user has to be provided with two options every time he/she gets a chance to perform their move:
-            1. Option to view the boards (Their own board and the abstract board of the opponent, side-by-side)
-            2. Option to make a move.
-        * If the user opts for 2nd one, then take input, validate the input, process the input and update the boards
-          accordingly. Then show whether its a hit/miss.
-        * After each move performed by any player, check whether if anyone has won the game. If yes, then stop the game
-          and announce the winner. Then get the acknowledgement from both the users to restart the game
-          and act accordingly.
-    """
+    print_notes(game.game_play, winner.board.matrix, loser.board.matrix)
