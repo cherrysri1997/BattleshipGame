@@ -71,7 +71,7 @@ def get_player_names():
     return player_name_A, player_name_B
 
 
-def choose_player_to_begin(player_A: Player, player_B: Player) -> int:
+def choose_player_to_begin(player_A: Player, player_B: Player) -> tuple:
 
     """
     This utility function decides which player to start the match.
@@ -113,6 +113,10 @@ def choose_player_to_begin(player_A: Player, player_B: Player) -> int:
     player_B_num = choose_number(player_B.name)
 
     if decide_winner() is True:
-        return 0
+        return player_A, player_B
 
-    return 1
+    return player_B, player_A
+
+
+def show_toss_winner(toss_winner: Player):
+    print(f"{toss_winner.name} has won the toss and gets a chance to FIRE first.\n")

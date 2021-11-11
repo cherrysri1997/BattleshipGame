@@ -22,10 +22,3 @@ class Board:
 
     def set_ships(self, ships: Dict[str, Ship]):
         self.ships = ships
-
-
-    def set_hit_or_miss(self, coordinate: Coordinate):
-        if self.matrix[coordinate.coordinate_x][coordinate.coordinate_y] == "_":  # '!' denotes a Miss
-            self.matrix[coordinate.coordinate_x][coordinate.coordinate_y] = "!"
-        else:  # '^' denotes a hit
-            self.matrix[coordinate.coordinate_x][coordinate.coordinate_y] = "^"
