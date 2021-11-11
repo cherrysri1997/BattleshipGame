@@ -41,5 +41,6 @@ allow people to play over the network (p2p without having a central server).**
 Since we don't want to have a central server, then the idea would be is to make one of the player's device, a server and the other one, a client.
 And then create a link for a game share it to the opponent and challenge.
 
-Another idea is to enable the hotspot/bluetooth on one device and getting opponent's device connected to it, so that they are in the same network. Then connection provider is considered a server and connection seeking device as a client.
+Another idea is to enable the hotspot/bluetooth on one device and getting opponent's device connected to it, so that they are in the same network.
+Then connection provider is considered a server and connection seeking device as a client. For this to happen both the devices are supposed to be within a certain boundary and vicinity (like within a radius of 10 to 20 metres). Similar to Mini Militia.
 
