@@ -32,6 +32,7 @@
   * Until all the 5 ships of at least 1 player are destroyed, the game loop continues.
   * The game loop breaks as soon as a player loses all of his/her 5 ships.
   * The console output is printed into a PDF and uploaded with the name [output_console.pdf](https://github.com/cherrysri1997/BattleshipGame/blob/master/output_console.pdf). Please refer it for the output of whole gameplay.
+  * I managed to generate an executable file for the project. [executable](https://github.com/cherrysri1997/BattleshipGame/tree/master/output/main).
   * At the end of the game WINNER will be announced and all the moves made by both the players will be displayed in order.
 
 ### Additional Requirements:
